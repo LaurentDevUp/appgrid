@@ -1,0 +1,66 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* shadcn-like CSS variables for theming */
+:root {
+  --background: 0 0% 100%;
+  --foreground: 222.2 84% 4.9%;
+  --muted: 210 40% 96.1%;
+  --muted-foreground: 215.4 16.3% 46.9%;
+  --popover: 0 0% 100%;
+  --popover-foreground: 222.2 84% 4.9%;
+  --card: 0 0% 100%;
+  --card-foreground: 222.2 84% 4.9%;
+  --border: 214.3 31.8% 91.4%;
+  --input: 214.3 31.8% 91.4%;
+  /* Brand colors */
+  --primary: 294 60% 32%;        /* #792182 */
+  --primary-foreground: 0 0% 100%;
+  --secondary: 205 85% 39%;      /* #0f70b7 */
+  --secondary-foreground: 0 0% 100%;
+  --accent: 25 83% 42%;          /* #c55b12 */
+  --accent-foreground: 0 0% 100%;
+  --destructive: 0 84.2% 60.2%;
+  --destructive-foreground: 210 40% 98%;
+  --ring: 215 20.2% 65.1%;
+  --radius: 0.5rem;
+}
+
+.dark {
+  --background: 224 71% 4%;
+  --foreground: 213 31% 91%;
+  --muted: 223 47% 11%;
+  --muted-foreground: 215.4 16.3% 56.9%;
+  --popover: 224 71% 4%;
+  --popover-foreground: 215 20.2% 65.1%;
+  --card: 224 71% 4%;
+  --card-foreground: 213 31% 91%;
+  --border: 216 34% 17%;
+  --input: 216 34% 17%;
+  /* Brand colors (same in dark for consistency) */
+  --primary: 294 60% 32%;        /* #792182 */
+  --primary-foreground: 0 0% 100%;
+  --secondary: 205 85% 39%;      /* #0f70b7 */
+  --secondary-foreground: 0 0% 100%;
+  --accent: 25 83% 42%;          /* #c55b12 */
+  --accent-foreground: 0 0% 100%;
+  --destructive: 0 62.8% 30.6%;
+  --destructive-foreground: 210 40% 98%;
+  --ring: 216 34% 17%;
+}
+
+/* Base styles */
+* { box-sizing: border-box; }
+html, body, #root { height: 100%; }
+
+.container { @apply mx-auto max-w-2xl px-4; }
+.card { @apply bg-card text-card-foreground rounded-lg border; }
+
+button:focus { outline: none; }
+
+@layer base {
+  h1 { @apply font-poppins; }
+  h2, h3, h4, h5, h6 { @apply font-lato; }
+  p { @apply font-roboto; }
+}

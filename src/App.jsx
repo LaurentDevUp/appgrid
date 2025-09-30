@@ -4,6 +4,8 @@ import LoginPage from './pages/LoginPage.jsx'
 import Dashboard from './pages/Dashboard.jsx'
 import SignUpPage from './pages/SignUpPage.jsx'
 import Profile from './pages/Profile.jsx'
+import ForgotPasswordPage from './pages/ForgotPasswordPage.jsx'
+import ResetPasswordPage from './pages/ResetPasswordPage.jsx'
 import AuthedLayout from './layouts/AuthedLayout.jsx'
 import { useUserStore } from './store/user.js'
 import { supabase } from './lib/supabase.js'
@@ -71,6 +73,8 @@ export default function App() {
           <Route path="/" element={<Navigate to="/dashboard" replace />} />
           <Route path="/login" element={<LoginPage />} />
           <Route path="/signup" element={<SignUpPage />} />
+          <Route path="/forgot-password" element={<ForgotPasswordPage />} />
+          <Route path="/reset-password" element={<ResetPasswordPage />} />
           <Route element={<ProtectedRoute><AuthedLayout /></ProtectedRoute>}>
             <Route path="/dashboard" element={<Dashboard />} />
             <Route path="/profile" element={<Profile />} />

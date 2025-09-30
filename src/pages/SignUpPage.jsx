@@ -48,7 +48,7 @@ export default function SignUpPage() {
             <img
               src="/images/Grid310x310.png"
               alt="AppGrid"
-              className="mx-auto w-40 h-40 rounded-2xl shadow-lg object-contain"
+              className="mx-auto w-24 h-24 md:w-32 md:h-32 lg:w-40 lg:h-40 rounded-2xl shadow-lg object-contain"
             />
             <h1 className="text-3xl font-bold text-foreground">Créer un compte</h1>
             <p className="text-muted-foreground">Rejoignez la plateforme télépilote</p>

@@ -66,9 +66,11 @@ export default function LoginPage() {
       <div className="flex-1 flex items-center justify-center p-8 bg-card">
         <div className="w-full max-w-md space-y-8">
           <div className="text-center space-y-3">
-            <div className="inline-flex items-center justify-center w-16 h-16 rounded-2xl bg-gradient-to-br from-primary to-primary/80 shadow-lg">
-              <Shield className="w-9 h-9 text-primary-foreground" />
-            </div>
+            <img
+              src="/images/Grid310x310.png"
+              alt="AppGrid"
+              className="mx-auto w-40 h-40 rounded-2xl shadow-lg object-contain"
+            />
             <h1 className="text-3xl font-bold text-foreground">Bienvenue</h1>
             <p className="text-muted-foreground">Connectez-vous à votre compte télépilote</p>
           </div>
@@ -115,7 +117,7 @@ export default function LoginPage() {
                 <label htmlFor="password" className="block text-sm font-medium text-foreground">
                   Mot de passe
                 </label>
-                <a href="#" className="text-sm font-medium text-primary hover:text-primary/80 transition-colors">
+                <a href="/forgot-password" className="text-sm font-medium text-primary hover:text-primary/80 transition-colors">
                   Mot de passe oublié ?
                 </a>
               </div>

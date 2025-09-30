@@ -45,9 +45,11 @@ export default function SignUpPage() {
       <div className="flex-1 flex items-center justify-center p-8 bg-card">
         <div className="w-full max-w-md space-y-8">
           <div className="text-center space-y-3">
-            <div className="inline-flex items-center justify-center w-16 h-16 rounded-2xl bg-gradient-to-br from-primary to-primary/80 shadow-lg">
-              <Shield className="w-9 h-9 text-primary-foreground" />
-            </div>
+            <img
+              src="/images/Grid310x310.png"
+              alt="AppGrid"
+              className="mx-auto w-40 h-40 rounded-2xl shadow-lg object-contain"
+            />
             <h1 className="text-3xl font-bold text-foreground">Créer un compte</h1>
             <p className="text-muted-foreground">Rejoignez la plateforme télépilote</p>
           </div>

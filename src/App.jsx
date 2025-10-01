@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react'
-import { Routes, Route, Navigate, Link, useNavigate } from 'react-router-dom'
+import { Routes, Route, Navigate, Link, useNavigate, useLocation } from 'react-router-dom'
 import LoginPage from './pages/LoginPage.jsx'
 import Dashboard from './pages/Dashboard.jsx'
 import SignUpPage from './pages/SignUpPage.jsx'
@@ -21,8 +21,10 @@ function ProtectedRoute({ children }) {
 export default function App() {
   const t = useI18n()
   const navigate = useNavigate()
+  const location = useLocation()
   const setAuth = useUserStore((s) => s.setAuth)
   const user = useUserStore((s) => s.user)
+  const isAuthRoute = location.pathname === '/login' || location.pathname === '/signup'
 
   useEffect(() => {
     const { data: listener } = supabase.auth.onAuthStateChange((event, session) => {
@@ -49,12 +51,14 @@ export default function App() {
             <span>{t.app.title}</span>
           </Link>
           <div className="flex items-center gap-2">
-            <Link to="/profile" className="inline-flex items-center justify-center rounded-md border px-2 py-1 text-sm hover:bg-accent hover:text-accent-foreground" aria-label="Profil" title="Profil">
-              <svg className="h-5 w-5" viewBox="0 0 24 24" fill="currentColor" aria-hidden>
-                <path d="M12 12a5 5 0 1 0-5-5 5 5 0 0 0 5 5zm-7 9a7 7 0 0 1 14 0v1H5z"/>
-              </svg>
-              <span className="hidden sm:inline ml-2">Profil</span>
-            </Link>
+            {!isAuthRoute && (
+              <Link to="/profile" className="inline-flex items-center justify-center rounded-md border px-2 py-1 text-sm hover:bg-accent hover:text-accent-foreground" aria-label="Profil" title="Profil">
+                <svg className="h-5 w-5" viewBox="0 0 24 24" fill="currentColor" aria-hidden>
+                  <path d="M12 12a5 5 0 1 0-5-5 5 5 0 0 0 5 5zm-7 9a7 7 0 0 1 14 0v1H5z"/>
+                </svg>
+                <span className="hidden sm:inline ml-2">Profil</span>
+              </Link>
+            )}
             <ThemeToggle />
             {user ? (
               <button

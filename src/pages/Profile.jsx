@@ -11,12 +11,12 @@ export default function Profile() {
     <div className="min-h-screen bg-background">
       <div className="max-w-6xl mx-auto p-6 space-y-6">
         {/* Header */}
-        <div className="flex items-center justify-between">
+        <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
           <div>
             <h1 className="text-3xl font-bold text-foreground">Mon Profil</h1>
             <p className="text-muted-foreground mt-1">Gérez vos informations personnelles et professionnelles</p>
           </div>
-          <button className="flex items-center gap-2 px-6 py-3 bg-primary text-primary-foreground rounded-xl hover:bg-primary/90 transition-all shadow-lg hover:shadow-xl">
+          <button className="self-start md:self-auto flex items-center gap-2 px-6 py-3 bg-primary text-primary-foreground rounded-xl hover:bg-primary/90 transition-all shadow-lg hover:shadow-xl">
             <Save className="w-5 h-5" />
             Enregistrer
           </button>
@@ -28,8 +28,8 @@ export default function Profile() {
             <div className="bg-card rounded-2xl shadow-xl overflow-hidden border">
               <div className="h-32 bg-gradient-to-r from-primary via-primary/80 to-primary/60"></div>
               <div className="px-8 pb-8">
-                <div className="flex flex-col md:flex-row md:items-end md:justify-between -mt-16 mb-6">
-                  <div className="flex items-end gap-4">
+                <div className="flex flex-col md:flex-row md:items-end md:justify-between -mt-14 md:-mt-16 mb-6">
+                  <div className="flex items-start md:items-end gap-4">
                     <div className="relative group">
                       <div className="w-32 h-32 rounded-2xl bg-card p-2 shadow-xl border">
                         {user.avatar ? (
@@ -76,7 +76,7 @@ export default function Profile() {
                 </div>
                 
                 <div className="space-y-4">
-                  <div className="grid grid-cols-2 gap-4">
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                     <div>
                       <label className="block text-sm font-medium text-foreground mb-2">
                         Prénom
@@ -151,7 +151,7 @@ export default function Profile() {
                     </div>
                   </div>
 
-                  <div className="grid grid-cols-2 gap-4">
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                     <div>
                       <label className="block text-sm font-medium text-foreground mb-2">
                         Rôle / Grade
@@ -178,7 +178,7 @@ export default function Profile() {
                     </div>
                   </div>
 
-                  <div className="grid grid-cols-2 gap-4">
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                     <div>
                       <label className="block text-sm font-medium text-foreground mb-2">
                         Date d'entrée
@@ -276,7 +276,7 @@ export default function Profile() {
             </div>
 
             {/* Statistiques rapides */}
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4">
               {[
                 { label: 'Heures de vol', value: '247h', icon: Clock },
                 { label: 'Missions', value: '142', icon: MapPin },
